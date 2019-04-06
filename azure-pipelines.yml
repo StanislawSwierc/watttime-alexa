@@ -11,7 +11,8 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  solutionPath: 'src/WattTime.Agent.sln'
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration)
+- script: dotnet build $(solutionPath) --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
