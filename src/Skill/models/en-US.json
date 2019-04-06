@@ -1,0 +1,205 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "carbon tracker",
+      "intents": [
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "CanITurnOn",
+          "slots": [
+            {
+              "name": "appliance",
+              "type": "appliance"
+            },
+            {
+              "name": "postalCode",
+              "type": "AMAZON.PostalAddress",
+              "samples": [
+                "my zip code is {postalCode}"
+              ]
+            }
+          ],
+          "samples": [
+            "can i turn on {appliance}",
+            "can I turn on the {appliance} now"
+          ]
+        },
+        {
+          "name": "WhenCanITurnOn",
+          "slots": [
+            {
+              "name": "action",
+              "type": "action"
+            },
+            {
+              "name": "appliance",
+              "type": "appliance"
+            },
+            {
+              "name": "postalCode",
+              "type": "AMAZON.PostalAddress",
+              "samples": [
+                "my zip code is {postalCode}"
+              ]
+            }
+          ],
+          "samples": [
+            "When can I use the {appliance}",
+            "When can I use {appliance}",
+            "When can I {action}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "iron"
+              }
+            },
+            {
+              "name": {
+                "value": "oven"
+              }
+            },
+            {
+              "name": {
+                "value": "dryer"
+              }
+            }
+          ],
+          "name": "appliance"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "press my clothes"
+              }
+            },
+            {
+              "name": {
+                "value": "dry my clothes"
+              }
+            }
+          ],
+          "name": "action"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CanITurnOn",
+          "confirmationRequired": false,
+          "slots": [
+            {
+              "name": "appliance",
+              "type": "appliance",
+              "elicitationRequired": false,
+              "confirmationRequired": false
+            },
+            {
+              "name": "postalCode",
+              "type": "AMAZON.PostalAddress",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.885869860141.959677275017"
+              }
+            }
+          ]
+        },
+        {
+          "name": "WhenCanITurnOn",
+          "confirmationRequired": false,
+          "slots": [
+            {
+              "name": "action",
+              "type": "action",
+              "elicitationRequired": false,
+              "confirmationRequired": false
+            },
+            {
+              "name": "appliance",
+              "type": "appliance",
+              "elicitationRequired": false,
+              "confirmationRequired": false
+            },
+            {
+              "name": "postalCode",
+              "type": "AMAZON.PostalAddress",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1387613863230.203869047004"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1361117642501.47716289638",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please, tell me wich one is your zip code?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.885869860141.1347395507448",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What you want to turn on?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.885869860141.959677275017",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Which one is your zip code?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Please, tell me your zipcode?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1387613863230.203869047004",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please, Tell me your zip code"
+          }
+        ]
+      }
+    ]
+  }
+}
