@@ -5,7 +5,12 @@ VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WattTime.Alexa.Functions", "Functions\WattTime.Alexa.Functions.csproj", "{7A95515E-529C-4711-B00B-682BE9A39F88}"
 EndProject
-Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "WattTime.Alexa.Deploy", "WattTime.Alexa.Deploy\WattTime.Alexa.Deploy.deployproj", "{E0FFAD6C-0041-4A95-ACDE-AAEC1C6EAEAB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deploy", "Deploy", "{9D0F5241-E69C-4E80-9448-D03CA3364C42}"
+	ProjectSection(SolutionItems) = preProject
+		Deploy\azuredeploy.json = Deploy\azuredeploy.json
+		Deploy\azuredeploy.parameters.json = Deploy\azuredeploy.parameters.json
+		Deploy\Deploy-AzureResourceGroup.ps1 = Deploy\Deploy-AzureResourceGroup.ps1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +22,6 @@ Global
 		{7A95515E-529C-4711-B00B-682BE9A39F88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A95515E-529C-4711-B00B-682BE9A39F88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A95515E-529C-4711-B00B-682BE9A39F88}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E0FFAD6C-0041-4A95-ACDE-AAEC1C6EAEAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E0FFAD6C-0041-4A95-ACDE-AAEC1C6EAEAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E0FFAD6C-0041-4A95-ACDE-AAEC1C6EAEAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E0FFAD6C-0041-4A95-ACDE-AAEC1C6EAEAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
