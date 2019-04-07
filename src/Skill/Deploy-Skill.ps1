@@ -1,12 +1,15 @@
 Param(
     [string] [Parameter(Mandatory=$true)] $VaultName,   
     [string] [Parameter(Mandatory=$true)] $SkillId,
-    [string] [Parameter(Mandatory)] [ValidateSet("skill", "isp", "model")] $Target,
     [switch] $Force
 )
 
-& "$PSScriptRoot\Import-AskProfile.ps1" -VaultName $VaultName
+Set-Location $PSScriptRoot
 
-& ask deploy --target $Target $(if ($Force) { '--force' } else { '' })
+.\Import-AskProfile.ps1 -VaultName $VaultName
 
-& "$PSScriptRoot\Export-AskProfile.ps1" -VaultName $VaultName
+& npm install -g ask-cli
+& ask deploy --target skill $(if ($Force) { '--force' } else { '' })
+& ask deploy --target model $(if ($Force) { '--force' } else { '' })
+
+.\Export-AskProfile.ps1 -VaultName $VaultName
