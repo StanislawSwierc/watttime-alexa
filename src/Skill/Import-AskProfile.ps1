@@ -10,5 +10,6 @@ $CliConfigSecretName = "AskCli-Config"
 $CliConfigSecret = Get-AzureKeyVaultSecret -VaultName $VaultName -Name $CliConfigSecretName
 if (!$CliConfigSecret) { throw "Secret not found: $CliConfigSecretName" }
 $CliConfigBytes = [System.Convert]::FromBase64String($CliConfigSecret.SecretValueText)
+[System.IO.Directory]::CreateDirectory("$env:USERPROFILE\.ask")
 [System.IO.File]::WriteAllBytes("$env:USERPROFILE\.ask\cli_config", $CliConfigBytes)
 
