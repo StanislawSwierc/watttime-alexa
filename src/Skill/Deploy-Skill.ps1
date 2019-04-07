@@ -8,7 +8,6 @@ Set-Location $PSScriptRoot
 
 .\Import-AskProfile.ps1 -VaultName $VaultName
 
-& npm install -g ask-cli
 & ask deploy --target skill $(if ($Force) { '--force' } else { '' })
 & ask deploy --target model $(if ($Force) { '--force' } else { '' })
 
