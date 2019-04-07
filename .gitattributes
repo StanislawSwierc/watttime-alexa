@@ -18,4 +18,5 @@
 package.json text eol=lf
 package-lock.json text eol=lf
 .vscode/launch.json text eol=lf
-.vscode/tasks.json text eol=lf
+.vscode/tasks.json texteol=lf
+config eol=lf
